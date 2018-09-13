@@ -141,4 +141,10 @@
         android:summary="@string/global_actions_advanced_reboot_summary"
         android:defaultValue="true" />
 
+    <!-- Swap volume buttons -->
+    <com.blaster.support.preference.SystemSettingSwitchPreference
+        android:key="swap_volume_buttons"
+        android:title="@string/swap_volume_buttons_title"
+        android:summary="@string/swap_volume_buttons_summary"
+        android:defaultValue="false" />
 </PreferenceScreen>
