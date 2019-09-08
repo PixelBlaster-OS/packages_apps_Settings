@@ -21,7 +21,6 @@
     android:key="apps_and_notification_screen"
     android:title="@string/app_and_notification_dashboard_title">
 
-
    <Preference
         android:key="notification_animation"
         android:layout="@layout/notification_animation" 

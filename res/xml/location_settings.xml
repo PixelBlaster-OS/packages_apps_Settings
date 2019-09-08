@@ -40,8 +40,7 @@
 
     <PreferenceCategory
         android:key="location_advanced_settings"
-        android:layout="@layout/preference_category_no_label"
-        settings:initialExpandedChildrenCount="8">
+        android:layout="@layout/preference_category_no_label">
 
         <!-- This preference category gets removed if new_recent_location_ui is disabled -->
         <Preference
