@@ -104,4 +104,16 @@
             android:fragment="com.android.settings.blaster.fragments.BrightnessSliderSettings"
             android:defaultValue="true" />
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="ambientsettings_category"
+        android:title="@string/ambientsettings_category_title">
+
+        <!-- AOD on charge -->
+        <com.blaster.support.preference.SystemSettingSwitchPreference
+            android:key="doze_on_charge"
+            android:defaultValue="false"
+            android:title="@string/doze_on_charge_title"
+            android:summary="@string/doze_on_charge_summary" />
+    </PreferenceCategory>
 </PreferenceScreen>
