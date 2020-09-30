@@ -180,4 +180,8 @@
     <string name="power_button_torch_title">Quick torch</string>
     <string name="power_button_torch_summary">Long-press power button to enable torch When the screen is off</string>
 
+    <!-- Clock style -->
+    <string name="clock_style_title">Clock style</string>
+    <string name="clock_style_summary">Customize lockscreen clock</string>
+
 </resources>
