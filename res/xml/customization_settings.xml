@@ -85,4 +85,17 @@
             android:summaryOff="@string/qs_show_battery_estimate_summary_off"
             android:defaultValue="false" />
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="quicksettings_category"
+        android:title="@string/quicksettings_category_title">
+
+        <!-- qs brightness customization -->
+        <com.blaster.support.preference.SecureSettingMasterSwitchPreference
+            android:key="qs_show_brightness"
+            android:title="@string/qs_show_brightness_title"
+            android:summary="@string/qs_show_brightness_summary"
+            android:fragment="com.android.settings.blaster.fragments.BrightnessSliderSettings"
+            android:defaultValue="true" />
+    </PreferenceCategory>
 </PreferenceScreen>
