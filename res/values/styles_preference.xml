@@ -70,6 +70,10 @@
         <item name="android:negativeButtonText">@android:string/cancel</item>
     </style>
 
+    <style name="SettingsPreferenceFragmentStyle" parent="@style/PreferenceFragment.Material">
+        <item name="android:divider">@color/divider_color</item>
+    </style>
+
     <style name="SetupWizardPreferenceFragmentStyle" parent="PreferenceFragment.Material">
         <item name="android:layout">@layout/setup_preference</item>
     </style>
