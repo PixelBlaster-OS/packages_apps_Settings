@@ -207,4 +207,9 @@
     </plurals>
     <string name="keywords_applock_settings">applock, applocker, app lock, app locker</string>
 
+    <!-- Navbar length -->
+    <string name="navbar_length">Gesture bar length</string>
+    <string name="short_label">Short</string>
+    <string name="long_label">Long</string>
+
 </resources>
