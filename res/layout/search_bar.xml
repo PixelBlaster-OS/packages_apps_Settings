@@ -26,12 +26,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="48dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:paddingTop="32dp"
+        android:paddingTop="12dp"
         android:paddingBottom="26dp">
 
         <TextView
@@ -40,7 +40,7 @@
             android:text="@string/settings_label"
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="36sp"
-            android:fontFamily="google-sans-medium" />
+            style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
 
         <Space
             android:layout_width="0dp"
