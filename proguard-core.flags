@@ -1,0 +1,2 @@
+# Explosives
+-keep class com.blaster.settings.**

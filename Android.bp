@@ -27,9 +27,14 @@ android_library {
         "SettingsLib-search-defaults",
     ],
 
-    srcs: ["src/**/*.java"],
+    srcs: ["src/**/*.java",
+          "Explosives/src/**/*.java",
+    ],
+
+    aaptflags: ["--extra-packages com.blaster.settings"],
 
     resource_dirs: ["res",
+                    "Explosives/res",
                     "TouchGestures/res"
     ],
 
@@ -69,6 +74,9 @@ android_library {
         "ims-common",
         "app-compat-annotations",
     ],
+    optimize: {
+        proguard_flags_files: ["proguard-core.flags"],
+    },
 }
 
 platform_compat_config {
