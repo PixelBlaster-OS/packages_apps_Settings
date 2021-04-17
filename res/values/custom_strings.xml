@@ -220,4 +220,7 @@
     <string name="navbar_invert_layout_title">Invert Navigation Bar layout</string>
     <string name="navbar_invert_info">This will swap the \"Back\" and \"Recents\" buttons on the navigation bar</string>
 
+    <!-- statusbar tuner -->
+    <string name="statusbar_tuner_title">Statusbar tuner</string>    
+
 </resources>
