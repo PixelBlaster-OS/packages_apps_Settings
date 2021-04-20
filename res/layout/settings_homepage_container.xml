@@ -53,7 +53,7 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.core.widget.NestedScrollView
+    <com.android.settings.edgeeffect.SpringNestScrollView
         android:id="@+id/main_content_scrollable_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -74,5 +74,5 @@
                 android:animateLayoutChanges="true"/>
 
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </com.android.settings.edgeeffect.SpringNestScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
