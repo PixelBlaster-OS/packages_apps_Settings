@@ -114,6 +114,7 @@ public class BatteryMeterView extends CardView {
         mForegroundColorFilter = new PorterDuffColorFilter(
                 Utils.getColorAttrDefaultColor(context, android.R.attr.colorForeground),
                 PorterDuff.Mode.SRC);
+>>>>>>> 01fb18cfad... Settings: Battery: Redesign BatteryMeterView
         mDrawable = new BatteryMeterDrawable(context, frameColor);
         mDrawable.setColorFilter(mAccentColorFilter);
     }

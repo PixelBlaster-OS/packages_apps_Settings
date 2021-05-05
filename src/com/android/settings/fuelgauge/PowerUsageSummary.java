@@ -85,7 +85,6 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
 
     private static final String KEY_SCREEN_USAGE = "screen_usage";
     private static final String KEY_TIME_SINCE_LAST_FULL_CHARGE = "last_full_charge";
-    private static final String KEY_BATTERY_TEMP = "battery_temp";
 
     @VisibleForTesting
     static final int BATTERY_INFO_LOADER = 1;
@@ -103,8 +102,6 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
     PowerGaugePreference mScreenUsagePref;
     @VisibleForTesting
     PowerGaugePreference mLastFullChargePref;
-    @VisibleForTesting
-    PowerGaugePreference mBatteryTemp;
     @VisibleForTesting
     PowerUsageFeatureProvider mPowerFeatureProvider;
     @VisibleForTesting
@@ -241,7 +238,6 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         mScreenUsagePref = (PowerGaugePreference) findPreference(KEY_SCREEN_USAGE);
         mLastFullChargePref = (PowerGaugePreference) findPreference(
                 KEY_TIME_SINCE_LAST_FULL_CHARGE);
-        mBatteryTemp = (PowerGaugePreference) findPreference(KEY_BATTERY_TEMP);
         mBatteryUtils = BatteryUtils.getInstance(getContext());
 
         if (Utils.isBatteryPresent(getContext())) {
@@ -374,8 +370,6 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         updateLastFullChargePreference();
         mScreenUsagePref.setSummary(StringUtil.formatElapsedTime(getContext(),
                 mBatteryUtils.calculateScreenUsageTime(mStatsHelper), false));
-        mBatteryTemp.setSummary(
-                com.android.internal.util.octavi.OctaviUtils.batteryTemperature(getContext(), false));
 
         final long elapsedRealtimeUs = SystemClock.elapsedRealtime() * 1000;
         Intent batteryBroadcast = context.registerReceiver(null,
