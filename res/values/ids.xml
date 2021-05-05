@@ -37,4 +37,10 @@
 
     <!-- For a menu item allowing users to edit a SIM display name -->
     <item type="id" name="edit_sim_name" />
+
+    <item type="id" name="battery_entity_header" />
+    <item type="id" name="battery_percent" />
+    <item type="id" name="summary1" />
+    <item type="id" name="btn_show_stats" />
+    <item type="id" name="battery_header_icon" />
 </resources>
