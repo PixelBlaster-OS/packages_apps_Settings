@@ -245,19 +245,21 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         }
         mBatteryTipPreferenceController.restoreInstanceState(icicle);
         updateBatteryTipFlag(icicle);
+        ((TextView) this.mBatteryLayoutPref.findViewById(R.id.btn_show_stats)).setOnClickListener(new View.OnClickListener() {
+            /* class com.android.settings.fuelgauge.$$Lambda$PowerUsageSummary$00ln8VbkueS9HRjA2L4UZ9tGr0 */
+
+            public final void onClick(View view) {
+                PowerUsageSummary.this.lambda$onCreate$0$PowerUsageSummary(view);
+            }
+        });
     }
 
-    @Override
-    public boolean onPreferenceTreeClick(Preference preference) {
-        if (KEY_BATTERY_HEADER.equals(preference.getKey())) {
-            new SubSettingLauncher(getContext())
-                        .setDestination(PowerUsageAdvanced.class.getName())
-                        .setSourceMetricsCategory(getMetricsCategory())
-                        .setTitleRes(R.string.advanced_battery_title)
-                        .launch();
-            return true;
-        }
-        return super.onPreferenceTreeClick(preference);
+    public /* synthetic */ void lambda$onCreate$0$PowerUsageSummary(View view) {
+        SubSettingLauncher subSettingLauncher = new SubSettingLauncher(getContext());
+        subSettingLauncher.setDestination(PowerUsageAdvanced.class.getName());
+        subSettingLauncher.setSourceMetricsCategory(getMetricsCategory());
+        subSettingLauncher.setTitleRes(R.string.advanced_battery_title);
+        subSettingLauncher.launch();
     }
 
     @Override
@@ -434,7 +436,6 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
             summary1.setText(info.remainingLabel);
         }
         batteryView.setCharging(!info.discharging);
-        batteryView.setPowerSave(mPowerManager.isPowerSaveMode());
         startBatteryHeaderAnimationIfNecessary(batteryView, timeText, mBatteryLevel,
                 info.batteryLevel);
     }
@@ -447,7 +448,6 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
             final TextView timeText = (TextView) mBatteryLayoutPref.findViewById(R.id.battery_percent);
 
             batteryView.setBatteryLevel(mBatteryLevel);
-            batteryView.setPowerSave(mPowerManager.isPowerSaveMode());
             timeText.setText(formatBatteryPercentageText(mBatteryLevel));
         }
     }
@@ -468,7 +468,6 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
                 public void onAnimationUpdate(ValueAnimator animation) {
                     final Integer level = (Integer) animation.getAnimatedValue();
                     batteryView.setBatteryLevel(level);
-                    batteryView.setPowerSave(mPowerManager.isPowerSaveMode());
                     timeTextView.setText(formatBatteryPercentageText(level));
                 }
             });

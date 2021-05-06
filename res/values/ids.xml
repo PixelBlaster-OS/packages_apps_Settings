@@ -43,4 +43,17 @@
     <item type="id" name="summary1" />
     <item type="id" name="btn_show_stats" />
     <item type="id" name="battery_header_icon" />
+    <item type="id" name="cell_network_group" />
+    <item type="id" name="camera_group" />
+    <item type="id" name="charge" />
+    <item type="id" name="estimation" />
+    <item type="id" name="battery_usage" />
+    <item type="id" name="flashlight_group" />
+    <item type="id" name="gps_group" />
+    <item type="id" name="wifi_group" />
+    <item type="id" name="cpu_group" />
+    <item type="id" name="screen_on_group" />
+    <item type="id" name="charging_group" />
+    <item type="id" name="bottom_summary" />
+    <item type="id" name="battery_active" />
 </resources>

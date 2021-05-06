@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2017 The Android Open Source Project
+ * Copyright (C) 2021 PixelBlaster-OS 
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,121 +17,110 @@
 
 package com.android.settings.fuelgauge;
 
-import android.annotation.Nullable;
 import android.content.Context;
 import android.graphics.ColorFilter;
+import android.graphics.PorterDuff.Mode;
+import android.graphics.PorterDuffColorFilter;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.ImageView;
-
-import androidx.annotation.VisibleForTesting;
-
 import com.android.settings.R;
-import com.android.settings.Utils;
-import com.android.settingslib.graph.ThemedBatteryDrawable;
+import com.android.settingslib.graph.BatteryMeterDrawableBase;
 
 public class BatteryMeterView extends ImageView {
-    @VisibleForTesting
-    BatteryMeterDrawable mDrawable;
-    @VisibleForTesting
-    ColorFilter mErrorColorFilter;
-    @VisibleForTesting
     ColorFilter mAccentColorFilter;
-    @VisibleForTesting
+    BatteryMeterDrawable mDrawable;
+    ColorFilter mErrorColorFilter;
     ColorFilter mForegroundColorFilter;
 
-    private int mLevel;
+    public static class BatteryMeterDrawable extends BatteryMeterDrawableBase {
+        private final int mIntrinsicHeight;
+        private final int mIntrinsicWidth;
+
+        public BatteryMeterDrawable(Context context, int i) {
+            super(context, i);
+            this.mIntrinsicWidth = context.getResources().getDimensionPixelSize(R.dimen.battery_meter_width);
+            this.mIntrinsicHeight = context.getResources().getDimensionPixelSize(R.dimen.battery_meter_height);
+        }
+
+        public BatteryMeterDrawable(Context context, int i, int i2, int i3) {
+            super(context, i);
+            this.mIntrinsicWidth = i2;
+            this.mIntrinsicHeight = i3;
+        }
+
+        public int getIntrinsicWidth() {
+            return this.mIntrinsicWidth;
+        }
+
+        public int getIntrinsicHeight() {
+            return this.mIntrinsicHeight;
+        }
+
+        public void setWarningColorFilter(ColorFilter colorFilter) {
+            this.mWarningTextPaint.setColorFilter(colorFilter);
+        }
+
+        public void setBatteryColorFilter(ColorFilter colorFilter) {
+            this.mFramePaint.setColorFilter(colorFilter);
+            this.mBatteryPaint.setColorFilter(colorFilter);
+            this.mBoltPaint.setColorFilter(colorFilter);
+        }
+    }
 
     public BatteryMeterView(Context context) {
         this(context, null, 0);
     }
 
-    public BatteryMeterView(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs, 0);
+    public BatteryMeterView(Context context, AttributeSet attributeSet) {
+        this(context, attributeSet, 0);
     }
 
-    public BatteryMeterView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-
-        final int frameColor = context.getColor(R.color.meter_background_color);
-        mAccentColorFilter = Utils.getAlphaInvariantColorFilterForColor(
-                Utils.getColorAttrDefaultColor(context, android.R.attr.colorAccent));
-        mErrorColorFilter = Utils.getAlphaInvariantColorFilterForColor(
-                context.getColor(R.color.battery_icon_color_error));
-        mForegroundColorFilter = Utils.getAlphaInvariantColorFilterForColor(
-                Utils.getColorAttrDefaultColor(context, android.R.attr.colorForeground));
-        mDrawable = new BatteryMeterDrawable(context, frameColor);
-        mDrawable.setColorFilter(mAccentColorFilter);
-        setImageDrawable(mDrawable);
+    public BatteryMeterView(Context context, AttributeSet attributeSet, int i) {
+        super(context, attributeSet, i);
+        int color = context.getColor(R.color.meter_background_color);
+        this.mAccentColorFilter = new PorterDuffColorFilter(context.getColor(R.color.op_control_accent_color_green), Mode.SRC_IN);
+        this.mErrorColorFilter = new PorterDuffColorFilter(context.getColor(R.color.battery_icon_color_error), Mode.SRC_IN);
+        BatteryMeterDrawable batteryMeterDrawable = new BatteryMeterDrawable(context, color);
+        this.mDrawable = batteryMeterDrawable;
+        batteryMeterDrawable.setShowPercent(false);
+        this.mDrawable.setBatteryColorFilter(this.mAccentColorFilter);
+        this.mDrawable.setWarningColorFilter(new PorterDuffColorFilter(-1, Mode.SRC_IN));
+        setBackground(this.mDrawable);
     }
 
-    public void setBatteryLevel(int level) {
-        mLevel = level;
-        mDrawable.setBatteryLevel(level);
-        updateColorFilter();
-    }
-
-    public void setPowerSave(boolean powerSave) {
-        mDrawable.setPowerSaveEnabled(powerSave);
-        updateColorFilter();
-    }
-
-    public boolean getPowerSave() {
-        return mDrawable.getPowerSaveEnabled();
+    public void setBatteryLevel(int i) {
+        this.mDrawable.setBatteryLevel(i);
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("mDrawable.getCriticalLevel() = ");
+        stringBuilder.append(this.mDrawable.getCriticalLevel());
+        Log.d("BatteryMeterView", stringBuilder.toString());
+        if (i < this.mDrawable.getCriticalLevel()) {
+            this.mDrawable.setBatteryColorFilter(this.mErrorColorFilter);
+        } else {
+            this.mDrawable.setBatteryColorFilter(this.mAccentColorFilter);
+        }
     }
 
     public int getBatteryLevel() {
-        return mLevel;
+        return this.mDrawable.getBatteryLevel();
     }
 
-    public void setCharging(boolean charging) {
-        mDrawable.setCharging(charging);
+    public void setCharging(boolean z) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("setCharging = ");
+        stringBuilder.append(z);
+        Log.d("BatteryMeterView", stringBuilder.toString());
+        if (z) {
+            setImageResource(R.drawable.ic_battery_lightning);
+        } else {
+            setImageResource(0);
+        }
+        this.mDrawable.setCharging(z);
         postInvalidate();
     }
 
     public boolean getCharging() {
-        return mDrawable.getCharging();
-    }
-
-    private void updateColorFilter() {
-        final boolean powerSaveEnabled = mDrawable.getPowerSaveEnabled();
-        final int level = mDrawable.getBatteryLevel();
-        if (powerSaveEnabled) {
-            mDrawable.setColorFilter(mForegroundColorFilter);
-        } else if (level < mDrawable.getCriticalLevel()) {
-            mDrawable.setColorFilter(mErrorColorFilter);
-        } else {
-            mDrawable.setColorFilter(mAccentColorFilter);
-        }
-    }
-
-    public static class BatteryMeterDrawable extends ThemedBatteryDrawable {
-        private final int mIntrinsicWidth;
-        private final int mIntrinsicHeight;
-
-        public BatteryMeterDrawable(Context context, int frameColor) {
-            super(context, frameColor);
-
-            mIntrinsicWidth = context.getResources()
-                    .getDimensionPixelSize(R.dimen.battery_meter_width);
-            mIntrinsicHeight = context.getResources()
-                    .getDimensionPixelSize(R.dimen.battery_meter_height);
-        }
-
-        public BatteryMeterDrawable(Context context, int frameColor, int width, int height) {
-            super(context, frameColor);
-
-            mIntrinsicWidth = width;
-            mIntrinsicHeight = height;
-        }
-
-        @Override
-        public int getIntrinsicWidth() {
-            return mIntrinsicWidth;
-        }
-
-        @Override
-        public int getIntrinsicHeight() {
-            return mIntrinsicHeight;
-        }
+        return this.mDrawable.getCharging();
     }
 }
