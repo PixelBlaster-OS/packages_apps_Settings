@@ -77,10 +77,6 @@ public class BatteryFlagParser implements BatteryInfo.BatteryDataParser, Battery
         return mLength;
     }
 
-    @Override
-    public boolean hasData() {
-        return mData.size() > 1;
-    }
 
     @Override
     public SparseIntArray getColorArray() {
