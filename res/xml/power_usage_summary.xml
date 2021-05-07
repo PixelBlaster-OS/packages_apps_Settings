@@ -27,7 +27,7 @@
         android:selectable="false"
         android:layout="@layout/battery_header" />
 
-    <com.android.settings.widget.Preference
+    <Preference
         android:key="battery_tip"
         settings:iconSpaceReserved="false"
         android:title="@string/summary_placeholder"
