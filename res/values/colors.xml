@@ -183,5 +183,5 @@
     <color name="oneplus_accent_color">@color/settingsHeaderColor</color>
     <color name="settings_accent_color">@color/oneplus_accent_color</color>
     <color name="settingsHeaderColor">@*android:color/accent_device_default_light</color>
-
+    <color name="op_control_donut_view_meter_background_color">@*android:color/black</color>
 </resources>

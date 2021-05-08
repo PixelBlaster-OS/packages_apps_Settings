@@ -822,4 +822,8 @@
         <item name="android:fontFamily">@*android:string/config_lightFontFamily</item>
     </style>
 
+    <style name="op_theme_customization_text_style" parent="@style/op_control_text_style_body1">
+        <item name="android:textColor">@color/op_control_text_color_primary</item>
+    </style>
+
 </resources>

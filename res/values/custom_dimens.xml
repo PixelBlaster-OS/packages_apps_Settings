@@ -18,10 +18,16 @@
     <dimen name="op_control_avatar_size3">33.0dip</dimen>
     <dimen name="op_text_size_body1">13.0sp</dimen>
     <dimen name="op_control_margin_space5">24.0dip</dimen>
-    <item type="dimen" name="op_line_space_multiplier_h2">0.8</item>
     <dimen name="op_text_size_h2">96.0px</dimen>
     <dimen name="op_control_margin_space4">20.0dip</dimen>
     <dimen name="op_control_margin_screen_right2">16.0dip</dimen>
     <dimen name="op_control_margin_screen_left2">16.0dip</dimen>
+
+    <!-- OnePlus fonts -->
+    <dimen name="op_line_space_multiplier_h2">0.8</dimen>
+
+    <!-- Storage donut -->
+    <dimen name="oneplus_settings_storage_summary_donut_margin_top">22dp</dimen>
+    <dimen name="oneplus_settings_storage_summary_donut_padding_bottom">26dp</dimen>
 
 </resources>
