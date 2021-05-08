@@ -154,11 +154,6 @@ public abstract class BatteryTip implements Comparable<BatteryTip>, Parcelable {
         final Context context = preference.getContext();
         preference.setTitle(getTitle(context));
         preference.setSummary(getSummary(context));
-        preference.setIcon(getIconId());
-        @IdRes int iconTintColorId = getIconTintColorId();
-        if (iconTintColorId != View.NO_ID) {
-            preference.getIcon().setTint(context.getColor(iconTintColorId));
-        }
     }
 
     /** Returns the color resid for tinting {@link #getIconId()} or {@link View#NO_ID} if none. */
