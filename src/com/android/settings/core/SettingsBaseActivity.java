@@ -86,12 +86,12 @@ public class SettingsBaseActivity extends FragmentActivity {
         super.setContentView(R.layout.settings_base_layout);
 
         final Toolbar toolbar = findViewById(R.id.action_bar);
-        if (theme.getBoolean(android.R.styleable.Theme_windowNoTitle, false)) {
+        if (theme.getBoolean(android.R.styleable.Theme_windowNoTitle, false) && getActionBar() != null) {
             toolbar.setVisibility(View.GONE);
             ((AppBarLayout) findViewById(R.id.baseAppBar)).setExpanded(false);
             return;
         }
-        setActionBar(toolbar);
+	if (getActionBar() == null) setActionBar(toolbar);
 
         if (DEBUG_TIMING) {
             Log.d(TAG, "onCreate took " + (System.currentTimeMillis() - startTime)
