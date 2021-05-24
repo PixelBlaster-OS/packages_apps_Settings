@@ -176,7 +176,7 @@
     <color name="oneplus_accent_text_color">#ffc41442</color>
     <color name="op_control_bg_color_weaken_light">#0a000000</color>
     <color name="op_control_contextual_card_solid_color">@color/op_control_bg_color_weaken_light</color>
-    <color name="op_control_accent_color_green">@color/op_control_accent_color_green_light</color>
+    <color name="op_control_accent_color_green">@color/oneplus_accent_color</color>
     <color name="op_control_accent_color_green_light">#ff0bd270</color>
     <color name="op_control_accent_color_green_dark">#ff06743e</color>
     <color name="oneplus_homepage_icon_background">#ffffff</color>
