@@ -112,7 +112,6 @@ public class BatteryMeterView extends ImageView {
         stringBuilder.append(z);
         Log.d("BatteryMeterView", stringBuilder.toString());
         if (z) {
-            setImageResource(R.drawable.ic_battery_lightning);
         } else {
             setImageResource(0);
         }
