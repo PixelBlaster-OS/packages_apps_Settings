@@ -3465,7 +3465,7 @@
         <!-- Explosives -->
         <activity android:name="Settings$ExplosivesActivity"
             android:label="@string/blaster_settings_title"
-            android:icon="@drawable/ic_homepage_blaster"
+            android:icon="@drawable/op_ic_homepage_blaster"
             android:taskAffinity="com.android.settings">
             <intent-filter android:priority="1">
                 <action android:name="com.blaster.settings.Explosives" />
