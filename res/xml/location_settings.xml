@@ -46,6 +46,7 @@
         <Preference
             android:key="app_level_permissions"
             android:title="@string/location_app_level_permissions"
+            settings:iconSpaceReserved="false"
             settings:controller="com.android.settings.location.AppLocationPermissionPreferenceController">
             <intent android:action="android.intent.action.MANAGE_PERMISSION_APPS">
                 <extra android:name="android.intent.extra.PERMISSION_NAME"
@@ -57,6 +58,7 @@
             android:fragment="com.android.settings.location.ScanningSettings"
             android:key="location_scanning"
             android:title="@string/location_scanning_screen_title"
+            settings:iconSpaceReserved="false"
             settings:controller="com.android.settings.location.LocationScanningPreferenceController"/>
 
         <!-- This preference gets removed if there is no managed profile -->
@@ -65,6 +67,7 @@
             android:key="managed_profile_location_switch"
             android:selectable="true"
             android:title="@string/managed_profile_location_switch_title"
+            settings:iconSpaceReserved="false"
             settings:controller="com.android.settings.location.LocationForWorkPreferenceController"
             settings:forWork="true"
             settings:useAdminDisabledSummary="true"/>
@@ -72,12 +75,14 @@
         <PreferenceCategory
             android:key="location_services"
             android:layout="@layout/preference_category_no_label"
+            settings:iconSpaceReserved="false"
             settings:controller="com.android.settings.location.LocationServicePreferenceController"/>
 
         <!-- This preference gets removed if there is no managed profile -->
         <PreferenceCategory
             android:key="location_services_managed_profile"
             android:title="@string/managed_profile_location_services"
+            settings:iconSpaceReserved="false"
             settings:forWork="true"
             settings:controller="com.android.settings.location.LocationServiceForWorkPreferenceController"/>
 

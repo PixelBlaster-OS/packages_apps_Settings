@@ -30,6 +30,7 @@
     <Preference
         android:key="work_policy_info"
         android:title="@string/work_policy_privacy_settings"
+        settings:iconSpaceReserved="false"
         android:summary="@string/work_policy_privacy_settings_summary"
         settings:allowDividerAbove="true"
         settings:controller="com.android.settings.privacy.WorkPolicyInfoPreferenceController"/>
@@ -38,6 +39,7 @@
     <Preference
         android:key="interact_across_profiles_privacy"
         android:title="@string/interact_across_profiles_title"
+        settings:iconSpaceReserved="false"
         android:fragment="com.android.settings.applications.specialaccess.interactacrossprofiles.InteractAcrossProfilesSettings"
         settings:searchable="false"
         settings:controller="com.android.settings.applications.specialaccess.interactacrossprofiles.InteractAcrossProfilesController" />
@@ -46,6 +48,7 @@
     <Preference
         android:key="privacy_accessibility_usage"
         android:title="@string/accessibility_usage_title"
+        settings:iconSpaceReserved="false"
         settings:allowDividerAbove="true"
         settings:controller="com.android.settings.privacy.AccessibilityUsagePreferenceController">
         <intent android:action="android.intent.action.REVIEW_ACCESSIBILITY_SERVICES"/>
@@ -55,6 +58,7 @@
     <Preference
         android:key="privacy_manage_perms"
         android:title="@string/app_permissions"
+        settings:iconSpaceReserved="false"
         android:summary="@string/runtime_permissions_summary_control_app_access"
         settings:allowDividerAbove="true"
         settings:searchable="false">
@@ -65,6 +69,7 @@
     <SwitchPreference
         android:key="show_password"
         android:title="@string/show_password"
+        settings:iconSpaceReserved="false"
         android:summary="@string/show_password_summary"
         settings:controller="com.android.settings.security.ShowPasswordPreferenceController"/>
 
@@ -72,6 +77,7 @@
     <com.android.settings.RestrictedListPreference
         android:key="privacy_lock_screen_notifications"
         android:title="@string/lock_screen_notifications_title"
+        settings:iconSpaceReserved="false"
         android:summary="@string/summary_placeholder"
         settings:searchable="false"/>
 
@@ -88,12 +94,14 @@
     <PreferenceCategory
         android:key="privacy_work_profile_notifications_category"
         android:title="@string/profile_section_header"
+        settings:iconSpaceReserved="false"
         android:order="998"
         settings:searchable="false">
 
         <com.android.settings.RestrictedListPreference
             android:key="privacy_lock_screen_work_profile_notifications"
             android:title="@string/locked_work_profile_notification_title"
+            settings:iconSpaceReserved="false"
             android:summary="@string/summary_placeholder"
             android:order="999"
             settings:searchable="false"/>
@@ -109,12 +117,14 @@
     <SwitchPreference
         android:key="content_capture"
         android:title="@string/content_capture"
+        settings:iconSpaceReserved="false"
         android:summary="@string/content_capture_summary"
         settings:controller="com.android.settings.privacy.EnableContentCapturePreferenceController"/>
 
     <com.android.settings.widget.MasterSwitchPreference
         android:key="content_capture_custom_settings"
         android:title="@string/content_capture"
+        settings:iconSpaceReserved="false"
         android:summary="@string/content_capture_summary"
         settings:controller="com.android.settings.privacy.EnableContentCaptureWithServiceSettingsPreferenceController">
     </com.android.settings.widget.MasterSwitchPreference>

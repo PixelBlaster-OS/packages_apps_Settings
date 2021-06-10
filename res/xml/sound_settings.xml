@@ -99,6 +99,7 @@
     <com.android.settings.custom.preference.SecureSettingSwitchPreference
         android:key="volume_link_notification"
         android:title="@string/volume_link_notification_title"
+        settings:iconSpaceReserved="false"
         android:defaultValue="true"
         android:order="-138"
         settings:controller="com.android.settings.notification.LinkedVolumesPreferenceController"/>
@@ -108,6 +109,7 @@
         android:fragment="com.android.settings.sound.VibrateForCallsPreferenceFragment"
         android:key="vibrate_for_calls"
         android:title="@string/vibrate_when_ringing_title"
+        settings:iconSpaceReserved="false"
         android:order="-130"
         settings:controller="com.android.settings.sound.VibrateForCallsPreferenceController"
         settings:keywords="@string/keywords_vibrate_for_calls"/>
@@ -116,6 +118,7 @@
     <ListPreference
         android:key="vibration_pattern"
         android:title="@string/vibration_pattern_title"
+        settings:iconSpaceReserved="false"
         android:order="-125"
         android:entries="@array/vibration_pattern_entries"
         android:entryValues="@array/vibration_pattern_values"
@@ -125,6 +128,7 @@
     <PreferenceCategory
         android:key="custom_vibration_pattern"
         android:title="@string/custom_vibration_pattern_title"
+        settings:iconSpaceReserved="false"
         android:order="-124"
         android:visibility="gone">
 
@@ -164,6 +168,7 @@
     <com.android.settingslib.RestrictedPreference
         android:key="zen_mode"
         android:title="@string/zen_mode_settings_title"
+        settings:iconSpaceReserved="false"
         android:fragment="com.android.settings.notification.zen.ZenModeSettings"
         android:order="-120"
         settings:useAdminDisabledSummary="true"
@@ -174,6 +179,7 @@
     <Preference
         android:key="media_controls_summary"
         android:title="@string/media_controls_title"
+        settings:iconSpaceReserved="false"
         android:fragment="com.android.settings.sound.MediaControlsSettings"
         android:order="-110"
         settings:controller="com.android.settings.sound.MediaControlsParentPreferenceController"
@@ -182,6 +188,7 @@
     <Preference
         android:key="gesture_prevent_ringing_sound"
         android:title="@string/gesture_prevent_ringing_sound_title"
+        settings:iconSpaceReserved="false"
         android:order="-107"
         android:fragment="com.android.settings.gestures.PreventRingingGestureSettings"
         settings:controller="com.android.settings.gestures.PreventRingingParentPreferenceController"/>
@@ -190,6 +197,7 @@
     <com.android.settings.DefaultRingtonePreference
         android:key="phone_ringtone"
         android:title="@string/ringtone_title"
+        settings:iconSpaceReserved="false"
         android:dialogTitle="@string/ringtone_title"
         android:summary="@string/summary_placeholder"
         android:ringtoneType="ringtone"
@@ -201,6 +209,7 @@
         android:key="ringtone2"
         android:title="@string/ringtone_title"
         android:dialogTitle="@string/ringtone_title"
+        settings:iconSpaceReserved="false"
         android:summary="@string/summary_placeholder"
         android:ringtoneType="ringtone"
         settings:allowDividerAbove="false"
@@ -210,6 +219,7 @@
     <com.android.settings.DefaultRingtonePreference
         android:key="notification_ringtone"
         android:title="@string/notification_ringtone_title"
+        settings:iconSpaceReserved="false"
         android:dialogTitle="@string/notification_ringtone_title"
         android:summary="@string/summary_placeholder"
         android:ringtoneType="notification"
@@ -219,6 +229,7 @@
     <com.android.settings.DefaultRingtonePreference
         android:key="alarm_ringtone"
         android:title="@string/alarm_ringtone_title"
+        settings:iconSpaceReserved="false"
         android:dialogTitle="@string/alarm_ringtone_title"
         android:summary="@string/summary_placeholder"
         android:persistent="false"
@@ -233,18 +244,21 @@
         <com.android.settings.custom.preference.SystemSettingSwitchPreference
             android:key="vibrate_on_connect"
             android:title="@string/incall_vibrate_connect_title"
+            settings:iconSpaceReserved="false"
             android:summary="@string/incall_vibrate_connect_summary"
             android:defaultValue="false" />
 
         <com.android.settings.custom.preference.SystemSettingSwitchPreference
             android:key="vibrate_on_callwaiting"
             android:title="@string/incall_vibrate_call_wait_title"
+            settings:iconSpaceReserved="false"
             android:summary="@string/incall_vibrate_call_wait_summary"
             android:defaultValue="false" />
 
         <com.android.settings.custom.preference.SystemSettingSwitchPreference
             android:key="vibrate_on_disconnect"
             android:title="@string/incall_vibrate_disconnect_title"
+            settings:iconSpaceReserved="false"
             android:summary="@string/incall_vibrate_disconnect_summary"
             android:defaultValue="false" />
     </PreferenceCategory>
@@ -258,32 +272,38 @@
         <!-- Dial pad tones -->
         <SwitchPreference
           android:key="dial_pad_tones"
-          android:title="@string/dial_pad_tones_title"/>
+          android:title="@string/dial_pad_tones_title"
+          settings:iconSpaceReserved="false"/>
 
         <!-- Screen locking sounds -->
         <SwitchPreference
           android:key="screen_locking_sounds"
-          android:title="@string/screen_locking_sounds_title"/>
+          android:title="@string/screen_locking_sounds_title"
+          settings:iconSpaceReserved="false"/>
 
         <!-- Charging sounds -->
         <SwitchPreference
           android:key="charging_sounds"
-          android:title="@string/charging_sounds_title"/>
+          android:title="@string/charging_sounds_title"
+          settings:iconSpaceReserved="false"/>
 
         <!-- Docking sounds -->
         <SwitchPreference
           android:key="docking_sounds"
-          android:title="@string/docking_sounds_title"/>
+          android:title="@string/docking_sounds_title"
+          settings:iconSpaceReserved="false"/>
 
         <!-- Touch sounds -->
         <SwitchPreference
           android:key="touch_sounds"
-          android:title="@string/touch_sounds_title"/>
+          android:title="@string/touch_sounds_title"
+          settings:iconSpaceReserved="false"/>
 
         <!-- Vibrate on touch -->
         <SwitchPreference
           android:key="vibrate_on_touch"
           android:title="@string/vibrate_on_touch_title"
+          settings:iconSpaceReserved="false"
           android:summary="@string/vibrate_on_touch_summary"
           settings:keywords="@string/keywords_vibrate_on_touch"/>
 
@@ -291,22 +311,26 @@
         <DropDownPreference
           android:key="dock_audio_media"
           android:title="@string/dock_audio_media_title"
+          settings:iconSpaceReserved="false"
           android:summary="%s"/>
 
         <!-- Boot sounds -->
         <SwitchPreference
           android:key="boot_sounds"
-          android:title="@string/boot_sounds_title"/>
+          android:title="@string/boot_sounds_title"
+          settings:iconSpaceReserved="false"/>
 
         <!-- Screenshot sounds -->
         <SwitchPreference
           android:key="screenshot_sounds"
-          android:title="@string/screenshot_sound_title" />
+          android:title="@string/screenshot_sound_title" 
+          settings:iconSpaceReserved="false"/>
 
         <!-- Emergency tone -->
         <DropDownPreference
           android:key="emergency_tone"
           android:title="@string/emergency_tone_title"
+          settings:iconSpaceReserved="false"
           android:summary="%s"/>
     </PreferenceCategory>
 
@@ -319,6 +343,7 @@
                 <SwitchPreference
                     android:key="work_use_personal_sounds"
                     android:title="@string/work_use_personal_sounds_title"
+                    settings:iconSpaceReserved="false"
                     android:summary="@string/work_use_personal_sounds_summary"
                     android:disableDependentsState="true"/>
 
@@ -326,6 +351,7 @@
                 <com.android.settings.DefaultRingtonePreference
                     android:key="work_ringtone"
                     android:title="@string/work_ringtone_title"
+                    settings:iconSpaceReserved="false"
                     android:dialogTitle="@string/work_alarm_ringtone_title"
                     android:ringtoneType="ringtone"
                     android:dependency="work_use_personal_sounds"/>
@@ -334,6 +360,7 @@
                 <com.android.settings.DefaultRingtonePreference
                     android:key="work_notification_ringtone"
                     android:title="@string/work_notification_ringtone_title"
+                    settings:iconSpaceReserved="false"
                     android:dialogTitle="@string/work_alarm_ringtone_title"
                     android:ringtoneType="notification"
                     android:dependency="work_use_personal_sounds"/>
@@ -342,6 +369,7 @@
                 <com.android.settings.DefaultRingtonePreference
                     android:key="work_alarm_ringtone"
                     android:title="@string/work_alarm_ringtone_title"
+                    settings:iconSpaceReserved="false"
                     android:dialogTitle="@string/work_alarm_ringtone_title"
                     android:persistent="false"
                     android:ringtoneType="alarm"

@@ -46,6 +46,7 @@
     <SwitchPreference
         android:key="auto_sync_personal_account_data"
         android:title="@string/account_settings_menu_auto_sync_personal"
+        settings:iconSpaceReserved="false"
         android:summary="@string/auto_sync_account_summary"
         android:order="104"/>
 
