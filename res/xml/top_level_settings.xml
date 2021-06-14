@@ -34,7 +34,7 @@
         android:key="top_level_connected_devices"
         android:title="@string/connected_devices_dashboard_title"
         android:summary="@string/summary_placeholder"
-        android:layout="@layout/op_home_preference_card_bottom"  
+        android:layout="@layout/op_home_preference_card_middle"  
         android:icon="@drawable/op_ic_homepage_connected_device_settings"
         android:order="-110"
         android:fragment="com.android.settings.connecteddevice.ConnectedDeviceDashboardFragment"
@@ -45,9 +45,18 @@
         android:title="@string/app_and_notification_dashboard_title"
         android:summary="@string/app_and_notification_dashboard_summary"
         android:icon="@drawable/op_ic_homepage_apps_settings"
-        android:layout="@layout/op_home_preference_card_top"  
+        android:layout="@layout/op_home_preference_card_middle"  
         android:order="-100"
         android:fragment="com.android.settings.applications.AppAndNotificationDashboardFragment"/>
+
+    <Preference
+        android:key="top_level_explosives"
+        android:title="@string/blaster_settings_title"
+        android:summary="@string/blaster_dashboard_summary"
+        android:layout="@layout/op_home_preference_card_bottom" 
+        android:icon="@drawable/op_ic_homepage_blaster"
+        android:order="-95"
+        android:fragment="com.blaster.settings.Explosives"/>
 
     <Preference
         android:key="top_level_battery"
