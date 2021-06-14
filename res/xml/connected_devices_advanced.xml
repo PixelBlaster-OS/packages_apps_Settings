@@ -16,22 +16,20 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res-auto"
-    android:title="@string/connected_device_connections_title">
+    xmlns:settings="http://schemas.android.com/apk/res-auto">
 
     <Preference
         android:fragment="com.android.settings.connecteddevice.BluetoothDashboardFragment"
         android:key="bluetooth_switchbar_screen"
         android:title="@string/bluetooth_settings_title"
-        android:icon="@*android:drawable/ic_settings_bluetooth"
         android:order="-9"/>
 
     <Preference
         android:fragment="com.android.settings.connecteddevice.NfcAndPaymentFragment"
         android:key="nfc_and_payment_settings"
         android:title="@string/nfc_quick_toggle_title"
-        android:icon="@drawable/ic_nfc"
         android:order="-7"
+        settings:iconSpaceReserved="false" 
         settings:searchable="false"
         settings:controller="com.android.settings.connecteddevice.NfcAndPaymentFragmentController"/>
 
@@ -39,30 +37,30 @@
         android:fragment="com.android.settings.wfd.WifiDisplaySettings"
         android:key="wifi_display_settings"
         android:title="@string/wifi_display_settings_title"
-        android:icon="@drawable/ic_cast_24dp"
         android:order="-6"
         settings:controller="com.android.settings.wfd.WifiDisplayPreferenceController"
-        settings:keywords="@string/keywords_wifi_display_settings"/>
+        settings:keywords="@string/keywords_wifi_display_settings"
+        settings:iconSpaceReserved="false"/>
 
     <com.android.settingslib.RestrictedPreference
         android:fragment="com.android.settings.nfc.AndroidBeam"
         android:key="android_beam_settings"
         android:title="@string/android_beam_settings_title"
         settings:controller="com.android.settings.nfc.AndroidBeamPreferenceController"
-        android:icon="@drawable/ic_android"
+        settings:iconSpaceReserved="false" 
         android:order="-5"/>
 
     <com.android.settingslib.RestrictedPreference
+        settings:iconSpaceReserved="false" 
         android:key="connected_device_printing"
         android:title="@string/print_settings"
         android:summary="@string/summary_placeholder"
-        android:icon="@*android:drawable/ic_settings_print"
         android:fragment="com.android.settings.print.PrintSettingsFragment"
         android:order="-3"/>
 
     <Preference
+        settings:iconSpaceReserved="false" 
         android:key="bt_received_files"
-        android:icon="@drawable/ic_folder_vd_theme_24"
         android:title="@string/bluetooth_show_files_received_via_bluetooth"/>
 
     <PreferenceCategory

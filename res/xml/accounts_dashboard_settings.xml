@@ -18,7 +18,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:key="user_and_account_settings_screen"
-    android:title="@string/account_dashboard_title"
     settings:keywords="@string/keywords_accounts">
 
     <Preference
@@ -34,7 +33,7 @@
         android:title="@string/auto_sync_account_title"
         android:summary="@string/auto_sync_account_summary"
         android:order="102"
-        settings:allowDividerAbove="true"/>
+        settings:allowDividerAbove="false"/>
 
     <SwitchPreference
         android:key="auto_sync_work_account_data"
