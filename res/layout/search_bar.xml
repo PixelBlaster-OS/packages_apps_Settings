@@ -20,7 +20,7 @@
     android:id="@+id/search_bar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+    app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
     app:toolbarId="@+id/search_action_bar_container">
 
     <LinearLayout
