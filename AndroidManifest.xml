@@ -3506,6 +3506,22 @@
                 android:resource="@string/blaster_dashboard_summary"/>
         </activity>
 
+        <!-- Gaming mode -->
+        <receiver android:name="com.blaster.settings.fragments.GamingModeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.GAMING_MODE_TURN_OFF" />
+                <action android:name="android.intent.action.GAMING_MODE_TURN_ON" />
+            </intent-filter>
+        </receiver>
+        <activity android:name="Settings$GamingModeActivity"
+                android:label="@string/gaming_mode_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.blaster.settings.fragments.GamingMode" />
+        </activity>
         <!-- This is the longest AndroidManifest.xml ever. -->
     </application>
 </manifest>
