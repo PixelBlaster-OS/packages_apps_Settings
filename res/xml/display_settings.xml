@@ -126,6 +126,7 @@
     <com.android.settings.display.FontDialogPreference
         android:key="custom_font"
         android:title="@string/font_picker_title"
+        settings:iconSpaceReserved="false"
         android:persistent="false" />
 
     <Preference
