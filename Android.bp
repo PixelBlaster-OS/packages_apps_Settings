@@ -31,7 +31,8 @@ android_library {
           "Explosives/src/**/*.java",
     ],
 
-    aaptflags: ["--extra-packages com.blaster.settings"],
+    aaptflags: ["--extra-packages com.blaster.settings",
+                "--extra-packages com.factor.bouncy"],
 
     resource_dirs: ["res",
                     "Explosives/res",
@@ -69,6 +70,7 @@ android_library {
         "vendor.lineage.fastcharge-V1.0-java",
         "VendorSupport-preference",
         "androidx.dynamicanimation_dynamicanimation",
+        "bouncy",
     ],
 
     libs: [
@@ -107,4 +109,10 @@ android_app {
 android_library_import {
     name: "contextualcards",
     aars: ["libs/contextualcards.aar"],
+}
+
+android_library_import {
+    name: "bouncy",
+    aars: ["libs/bouncy-release.aar"],
+    sdk_version: "current",
 }
