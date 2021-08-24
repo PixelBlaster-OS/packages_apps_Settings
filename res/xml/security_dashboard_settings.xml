@@ -117,6 +117,7 @@
     <PreferenceCategory
         android:order="40"
         android:key="security_settings_device_admin_category"
+        settings:iconSpaceReserved="false"
         android:layout="@layout/preference_category_no_label">
 
         <Preference

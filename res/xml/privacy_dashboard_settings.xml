@@ -83,10 +83,12 @@
     <!-- Privacy Service -->
     <PreferenceCategory
         android:key="privacy_services"
+        settings:iconSpaceReserved="false"
         android:layout="@layout/preference_category_no_label"/>
 
     <PreferenceCategory
-        android:key="dashboard_tile_placeholder"/>
+        android:key="dashboard_tile_placeholder"
+        settings:iconSpaceReserved="false"/>
 
     <!-- Work profile settings are at the bottom with high order value to avoid users thinking that
          any of the above settings (including dynamic) are specific to the work profile. -->

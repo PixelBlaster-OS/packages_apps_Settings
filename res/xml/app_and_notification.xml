@@ -68,7 +68,7 @@
         android:fragment="com.android.settings.notification.ConfigureNotificationSettings"/>
 
     <!-- Notifications (appears before manage_perms), default apps (appears after) -->
-    <PreferenceCategory
+        <PreferenceCategory
         android:key="dashboard_tile_placeholder"
         settings:iconSpaceReserved="false" 
         android:order="10"/>

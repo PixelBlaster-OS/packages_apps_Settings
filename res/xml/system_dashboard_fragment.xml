@@ -57,8 +57,8 @@
     <Preference
         android:key="systemui_tuner_statusbar"
         android:title="@string/statusbar_tuner_title"
-        android:order="-230"
-        android:icon="@drawable/ic_systemui_tuner_statusbaritems" >
+        settings:iconSpaceReserved="false"
+        android:order="-230" >
         <intent android:action="android.intent.action.MAIN"
             android:targetPackage="com.android.systemui"
             android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
