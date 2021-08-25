@@ -20,10 +20,6 @@
     android:key="accessibility_settings_screen"
     android:persistent="false">
 
-    <Preference
-        android:key="accesibility_animation"
-        android:layout="@layout/accessibility_animation" />
-
     <PreferenceCategory
         android:key="user_installed_services_category"
         android:persistent="false"

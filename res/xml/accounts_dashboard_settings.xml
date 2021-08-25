@@ -20,10 +20,6 @@
     android:key="user_and_account_settings_screen"
     settings:keywords="@string/keywords_accounts">
 
-    <Preference
-        android:key="account_animation"
-        android:layout="@layout/account_animation" />
-
     <PreferenceCategory
         android:key="dashboard_tile_placeholder"
         android:order="30"/>
