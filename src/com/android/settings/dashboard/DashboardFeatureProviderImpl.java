@@ -365,8 +365,14 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
 
     @VisibleForTesting
     void bindIcon(Preference preference, Tile tile, boolean forceRoundedIcon) {
-        boolean settingsCardsAvailable = Settings.System.getIntForUser(preference.getContext().getContentResolver(),
-                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) != 2;
+        boolean settingsCardsVisible = Settings.System.getIntForUser(preference.getContext().getContentResolver(),
+                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) == 0;
+        boolean settingsCardsInvisible = Settings.System.getIntForUser(preference.getContext().getContentResolver(),
+                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) == 1;
+        boolean settingsCardsNone = Settings.System.getIntForUser(preference.getContext().getContentResolver(),
+                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) == 2;
+        boolean settingsCardsNoIcon = Settings.System.getIntForUser(preference.getContext().getContentResolver(),
+                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) ==  3;
         // Use preference context instead here when get icon from Tile, as we are using the context
         // to get the style to tint the icon. Using mContext here won't get the correct style.
         final Icon tileIcon = tile.getIcon(preference.getContext());
@@ -375,13 +381,25 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
             Log.d("ShapeShiftOS", "Tile key: "+ String.valueOf(getDashboardKeyForTile(tile)));
             if ("com.google.android.gms".equals(tile.getPackageName()) && "Google".equalsIgnoreCase(tile.getTitle(preference.getContext()).toString())) {
                 iconDrawable = preference.getContext().getDrawable(R.drawable.op_ic_homepage_google_settings);
-                if (settingsCardsAvailable) {
+                if (settingsCardsVisible) {
                     preference.setLayoutResource(R.layout.op_home_preference_card_bottom);
+                }
+                else if (settingsCardsInvisible) {
+                    preference.setLayoutResource(R.layout.op_home_preference_card_bottom);
+                }
+                else if (settingsCardsNone) {
+                    preference.setLayoutResource(R.layout.preference_with_icon);
                 }
             } else if ("com.google.android.apps.wellbeing".equals(tile.getPackageName())) {
                 iconDrawable = preference.getContext().getDrawable(R.drawable.op_ic_homepage_wellbeing_settings);
-                if (settingsCardsAvailable) {
+                if (settingsCardsVisible) {
                     preference.setLayoutResource(R.layout.op_home_preference_card_middle);
+                }
+                else if (settingsCardsInvisible) {
+                    preference.setLayoutResource(R.layout.op_home_preference_card_middle);
+                }
+                else if (settingsCardsNone) {
+                    preference.setLayoutResource(R.layout.preference_with_icon);
                 }
             } else if (forceRoundedIcon && !TextUtils.equals(mContext.getPackageName(), tile.getPackageName())) {
                 iconDrawable = new AdaptiveIcon(mContext, iconDrawable);

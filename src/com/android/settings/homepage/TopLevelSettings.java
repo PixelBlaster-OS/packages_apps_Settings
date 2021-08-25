@@ -58,13 +58,24 @@ public class TopLevelSettings extends DashboardFragment implements
     @Override
     protected int getPreferenceScreenResId() {
         final ContentResolver resolver = getContentResolver();
-        boolean settingsCardsAvailable = Settings.System.getIntForUser(resolver,
-                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) != 2;
+        boolean settingsCardsVisible = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) == 0;
+        boolean settingsCardsInvisible = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) == 1;
+        boolean settingsCardsNone = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) == 2;
+        boolean settingsCardsNoIcon = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) == 3;                                   
 
-        if (settingsCardsAvailable) {
+
+        if (settingsCardsVisible) {
             return R.xml.top_level_settings;
-        } else {
+        } else if (settingsCardsInvisible) {
+            return R.xml.top_level_settings;            
+        } else if (settingsCardsNone) {
             return R.xml.top_level_settings_no_cards;
+        } else {
+            return R.xml.top_level_settings_no_icons;
         }
     }
 
