@@ -832,4 +832,8 @@
     <style name="ToolbarText.Expanded" parent="ToolbarText.Collapsed">
         <item name="android:textSize">34sp</item>
     </style>
+
+    <style name="ToolbarTextHome.Expanded" parent="ToolbarText.Collapsed">
+        <item name="android:textSize">50sp</item>
+    </style>        
 </resources>

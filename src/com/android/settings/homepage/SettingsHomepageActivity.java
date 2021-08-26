@@ -36,6 +36,7 @@ import com.android.settings.accounts.AvatarViewMixin;
 import com.android.settings.core.HideNonSystemOverlayMixin;
 import com.android.settings.homepage.contextualcards.ContextualCardsFragment;
 import com.android.settings.overlay.FeatureFactory;
+import com.google.android.material.appbar.AppBarLayout;
 
 public class SettingsHomepageActivity extends FragmentActivity {
 
@@ -50,19 +51,12 @@ public class SettingsHomepageActivity extends FragmentActivity {
 
         setHomepageContainerPaddingTop();
 
-        final Toolbar toolbar = findViewById(R.id.search_action_bar);
-        FeatureFactory.getFactory(this).getSearchFeatureProvider()
-                .initSearchToolbar(this /* activity */, toolbar, SettingsEnums.SETTINGS_HOMEPAGE);
-
-        final ImageView avatarView = findViewById(R.id.account_avatar);
-        getLifecycle().addObserver(new AvatarViewMixin(this, avatarView));
         getLifecycle().addObserver(new HideNonSystemOverlayMixin(this));
 
-        if (!getSystemService(ActivityManager.class).isLowRamDevice()) {
-            // Only allow contextual feature on high ram devices.
-            showFragment(new ContextualCardsFragment(), R.id.contextual_cards_content);
-        }
+        final Toolbar toolbar = findViewById(R.id.home_action_bar);
+        ((AppBarLayout) findViewById(R.id.homeAppBar)).setExpanded(false);
         showFragment(new TopLevelSettings(), R.id.main_content);
+        setActionBar(toolbar);
         ((FrameLayout) findViewById(R.id.main_content))
                 .getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
     }
@@ -84,12 +78,7 @@ public class SettingsHomepageActivity extends FragmentActivity {
     void setHomepageContainerPaddingTop() {
         final View view = this.findViewById(R.id.homepage_container);
 
-        final int searchBarHeight = getResources().getDimensionPixelSize(R.dimen.search_bar_height);
-        final int searchBarMargin = getResources().getDimensionPixelSize(R.dimen.search_bar_margin);
-
-        // The top padding is the height of action bar(48dp) + top/bottom margins(16dp)
-        final int paddingTop = searchBarHeight + searchBarMargin * 2;
-        view.setPadding(0 /* left */, paddingTop, 0 /* right */, 0 /* bottom */);
+        view.setPadding(0 /* left */, 0 /* top */, 0 /* right */, 0 /* bottom */);
 
         // Prevent inner RecyclerView gets focus and invokes scrolling.
         view.setFocusableInTouchMode(true);

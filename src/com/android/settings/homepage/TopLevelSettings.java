@@ -51,7 +51,7 @@ public class TopLevelSettings extends DashboardFragment implements
     public TopLevelSettings() {
         final Bundle args = new Bundle();
         // Disable the search icon because this page uses a full search view in actionbar.
-        args.putBoolean(NEED_SEARCH_ICON_IN_ACTION_BAR, false);
+        args.putBoolean(NEED_SEARCH_ICON_IN_ACTION_BAR, true);
         setArguments(args);
     }
 
