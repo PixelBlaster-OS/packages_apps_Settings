@@ -75,7 +75,7 @@ public abstract class ConfirmDeviceCredentialBaseActivity extends SettingsActivi
             mConfirmCredentialTheme = ConfirmCredentialTheme.NORMAL;
         }
         super.onCreate(savedState);
-
+ 	    appbar.setExpanded(false);
         if (mConfirmCredentialTheme == ConfirmCredentialTheme.NORMAL) {
             // Prevent the content parent from consuming the window insets because GlifLayout uses
             // it to show the status bar background.

@@ -79,6 +79,7 @@ public class SetupChooseLockGeneric extends ChooseLockGeneric {
     @Override
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
+        appbar.setExpanded(false);
 
         if(getIntent().hasExtra(EXTRA_KEY_REQUESTED_MIN_COMPLEXITY)) {
             IBinder activityToken = getActivityToken();

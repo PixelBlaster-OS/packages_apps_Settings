@@ -186,6 +186,7 @@ public class ChooseLockPassword extends SettingsActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        appbar.setExpanded(false);
         final boolean forFingerprint = getIntent()
                 .getBooleanExtra(ChooseLockSettingsHelper.EXTRA_KEY_FOR_FINGERPRINT, false);
         final boolean forFace = getIntent()

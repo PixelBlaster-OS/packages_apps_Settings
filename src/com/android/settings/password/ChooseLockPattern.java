@@ -167,6 +167,7 @@ public class ChooseLockPattern extends SettingsActivity {
     protected void onCreate(Bundle savedInstanceState) {
         // requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
+        appbar.setExpanded(false);
         final boolean forFingerprint = getIntent()
                 .getBooleanExtra(ChooseLockSettingsHelper.EXTRA_KEY_FOR_FINGERPRINT, false);
         final boolean forFace = getIntent()

@@ -65,6 +65,7 @@ public class SetupChooseLockPassword extends ChooseLockPassword {
     @Override
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
+        appbar.setExpanded(false);
         CoordinatorLayout layout = (CoordinatorLayout) findViewById(R.id.content_parent);
         layout.setFitsSystemWindows(false);
     }

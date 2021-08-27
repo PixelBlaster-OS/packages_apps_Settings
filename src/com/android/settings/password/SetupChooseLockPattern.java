@@ -57,6 +57,7 @@ public class SetupChooseLockPattern extends ChooseLockPattern {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        appbar.setExpanded(false);
 
         // Show generic pattern title when pattern lock screen launch in Setup wizard flow before
         // fingerprint and face setup.
