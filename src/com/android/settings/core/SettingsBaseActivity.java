@@ -64,6 +64,7 @@ public class SettingsBaseActivity extends FragmentActivity {
     private final PackageReceiver mPackageReceiver = new PackageReceiver();
     private final List<CategoryListener> mCategoryListeners = new ArrayList<>();
     private int mCategoriesUpdateTaskCount;
+    public AppBarLayout appbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -84,11 +85,11 @@ public class SettingsBaseActivity extends FragmentActivity {
             setTheme(R.style.LightTheme_SubSettings_SetupWizard);
         }
         super.setContentView(R.layout.settings_base_layout);
-
+        appbar =  findViewById(R.id.baseAppBar);
         final Toolbar toolbar = findViewById(R.id.action_bar);
         if (theme.getBoolean(android.R.styleable.Theme_windowNoTitle, false) && getActionBar() != null) {
             toolbar.setVisibility(View.GONE);
-            ((AppBarLayout) findViewById(R.id.baseAppBar)).setExpanded(false);
+            appbar.setExpanded(false);
             return;
         }
 	if (getActionBar() == null) setActionBar(toolbar);

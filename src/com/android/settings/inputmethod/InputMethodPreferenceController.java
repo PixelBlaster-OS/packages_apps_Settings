@@ -18,7 +18,6 @@ package com.android.settings.inputmethod;
 
 import android.app.admin.DevicePolicyManager;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.inputmethod.InputMethodInfo;
 import android.view.inputmethod.InputMethodManager;
 
@@ -78,14 +77,12 @@ public class InputMethodPreferenceController extends BasePreferenceController im
             final InputMethodInfo imi = imis.get(i);
             final boolean isAllowedByOrganization = permittedList == null
                     || permittedList.contains(imi.getPackageName());
-            final Drawable icon = imi.loadIcon(mContext.getPackageManager());
             final InputMethodPreference pref = new InputMethodPreference(
                     mScreen.getContext(),
                     imi,
                     false,  /* isImeEnabler */
                     isAllowedByOrganization,
                     null  /* this can be null since isImeEnabler is false */);
-            pref.setIcon(icon);
             preferenceList.add(pref);
         }
         final Collator collator = Collator.getInstance();

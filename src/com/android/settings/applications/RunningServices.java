@@ -24,6 +24,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.settings.core.SettingsBaseActivity;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.widget.LoadingViewController;
@@ -41,7 +42,9 @@ public class RunningServices extends SettingsPreferenceFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+	if (getActivity() instanceof SettingsBaseActivity){
+	((SettingsBaseActivity) getActivity()).appbar.setExpanded(false);
+	}
         getActivity().setTitle(R.string.runningservices_settings_title);
     }
 

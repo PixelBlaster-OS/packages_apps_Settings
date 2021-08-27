@@ -36,7 +36,6 @@ import android.widget.AbsListView.RecyclerListener;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -156,7 +155,6 @@ public class RunningProcessesView extends FrameLayout
 
     public static class ViewHolder {
         public View rootView;
-        public ImageView icon;
         public TextView name;
         public TextView description;
         public TextView size;
@@ -164,7 +162,6 @@ public class RunningProcessesView extends FrameLayout
 
         public ViewHolder(View v) {
             rootView = v;
-            icon = v.findViewById(android.R.id.icon);
             name = v.findViewById(android.R.id.title);
             description = v.findViewById(android.R.id.summary);
             size = v.findViewById(R.id.widget_summary1);
@@ -198,8 +195,6 @@ public class RunningProcessesView extends FrameLayout
                     description.setText(item.mDescription);
                 }
                 item.mCurSizeStr = null;
-                icon.setImageDrawable(item.loadIcon(rootView.getContext(), state));
-                icon.setVisibility(View.VISIBLE);
                 ai.updateTime(rootView.getContext(), builder);
                 return ai;
             }
