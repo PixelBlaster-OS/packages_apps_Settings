@@ -18,12 +18,20 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
-    android:title="@string/firmware_version"
+    android:title="@string/blaster_title"
     settings:keywords="@string/keywords_android_version">
 
-<PreferenceScreen
+<!--<PreferenceScreen
     android:layout="@layout/blaster_logo_layout"
-    android:key="blaster_logo" />
+    android:key="blaster_logo" />-->
+
+    <!-- ROM Version -->
+    <Preference
+        android:key="blaster_version"
+        android:title="@string/blaster_version_title"
+        android:summary="@string/device_info_default"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.BlasterVersionPreferenceController"/>
 
     <!-- Android version -->
     <Preference
@@ -33,14 +41,6 @@
         settings:enableCopying="true"
         settings:searchable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
-
-    <!-- ROM Version -->
-    <Preference
-        android:key="blaster_version"
-        android:title="@string/blaster_version_title"
-        android:summary="@string/device_info_default"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.BlasterVersionPreferenceController"/>
 
     <!-- Blaster maintainer -->
     <Preference

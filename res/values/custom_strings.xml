@@ -14,6 +14,7 @@
 
     <!-- PixelBlaster OS version in About phone -->
     <string name="blaster_version_title">PixelBlaster version</string>
+    <string name="blaster_title">PixelBlaster OS</string>
 
     <!-- Fingerprint location message - default -->
     <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="default">Locate the fingerprint sensor on the front of your phone.</string>
