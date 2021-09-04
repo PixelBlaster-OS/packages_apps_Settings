@@ -24,7 +24,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <include layout="@layout/preview_seek_bar_view_pager" />
+        <include 
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            layout="@layout/preview_seek_bar_view_pager" />
 
         <LinearLayout
             android:orientation="vertical"
