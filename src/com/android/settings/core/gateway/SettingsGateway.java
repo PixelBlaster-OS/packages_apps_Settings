@@ -315,7 +315,7 @@ public class SettingsGateway {
             InteractAcrossProfilesDetails.class.getName(),
             MediaControlsSettings.class.getName(),
             Explosives.class.getName(),
-            GamingMode.class.getName()            
+            GamingMode.class.getName(),            
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {

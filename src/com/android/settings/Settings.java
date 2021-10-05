@@ -248,4 +248,5 @@ public class Settings extends SettingsActivity {
     public static class ExplosivesActivity extends SettingsActivity { /* empty */ }
 
      public static class GamingModeActivity extends SettingsActivity {}
+
 }

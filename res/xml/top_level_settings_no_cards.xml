@@ -154,14 +154,17 @@
         android:fragment="com.android.settings.system.SystemDashboardFragment"/>
 
     <Preference
-        android:key="top_level_about_device"
+        android:key="top_level_about"
         android:title="@string/about_settings"
         android:summary="@string/summary_placeholder"
+        android:layout="@layout/preference_with_icon" 
         android:icon="@drawable/op_ic_homepage_about_settings"
-        android:layout="@layout/preference_with_icon"
-        android:order="20"
-        android:fragment="com.android.settings.deviceinfo.aboutphone.MyDeviceInfoFragment"
-        settings:controller="com.android.settings.deviceinfo.aboutphone.TopLevelAboutDevicePreferenceController"/>
+        android:order="20">
+    <intent
+        android:action="android.intent.action.MAIN"
+        android:targetPackage="com.blaster.aboutphone"
+        android:targetClass="com.blaster.aboutphone.AboutRedesigned" />    
+    </Preference>
 
     <Preference
         android:key="top_level_support"
