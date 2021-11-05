@@ -24,7 +24,7 @@
         android:fragment="com.android.settings.network.NetworkDashboardFragment"
         android:icon="@drawable/ic_settings_wireless"
         android:key="top_level_network"
-        android:order="-150"
+        android:order="-160"
         android:title="@string/network_dashboard_title"
         android:summary="@string/summary_placeholder"
         settings:controller="com.android.settings.network.TopLevelNetworkEntryPreferenceController"/>
@@ -33,7 +33,7 @@
         android:fragment="com.android.settings.connecteddevice.ConnectedDeviceDashboardFragment"
         android:icon="@drawable/ic_devices_other"
         android:key="top_level_connected_devices"
-        android:order="-140"
+        android:order="-150"
         android:title="@string/connected_devices_dashboard_title"
         android:summary="@string/connected_devices_dashboard_default_summary"
         settings:controller="com.android.settings.connecteddevice.TopLevelConnectedDevicesPreferenceController"/>
@@ -42,9 +42,17 @@
         android:fragment="com.android.settings.applications.AppDashboardFragment"
         android:icon="@drawable/ic_apps"
         android:key="top_level_apps"
-        android:order="-130"
+        android:order="-140"
         android:title="@string/apps_dashboard_title"
         android:summary="@string/app_and_notification_dashboard_summary"/>
+
+    <Preference
+        android:key="top_level_explosives"
+        android:title="@string/blaster_settings_title"
+        android:summary="@string/blaster_dashboard_summary"
+        android:icon="@drawable/ic_homepage_blaster"
+        android:order="-130"
+        android:fragment="com.blaster.settings.Explosives" />
 
     <Preference
         android:fragment="com.android.settings.notification.ConfigureNotificationSettings"
