@@ -41,6 +41,12 @@
             android:summary="@string/roaming_indicator_icon_summary"
             android:defaultValue="true"/>
 
+        <com.blaster.support.preference.SecureSettingSwitchPreference
+            android:key="show_combined_status_bar_signal_icons"
+            android:title="@string/combined_status_bar_signal_icons"
+            android:summary="@string/combined_status_bar_signal_icons_summary"
+            android:defaultValue="false" />
+
         <Preference
             android:key="systemui_tuner_statusbar"
             android:title="@string/statusbar_items_title" >
