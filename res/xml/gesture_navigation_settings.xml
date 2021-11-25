@@ -57,18 +57,23 @@
             android:selectable="true"
             settings:textStart="@string/low_label"
             settings:textEnd="@string/high_label"/>
+
+        <com.android.settingslib.widget.FooterPreference
+            android:key="gesture_navigation_settings_footer"
+            android:title="@string/back_sensitivity_dialog_message"
+            android:selectable="false"
+            settings:searchable="false"/>
     </PreferenceCategory>
 
-    <com.blaster.support.preference.SecureSettingSwitchPreference
-        android:key="navigation_bar_hint"
-        android:title="@string/show_navbar_gesture_bar_title"
-        android:summary="@string/show_navbar_gesture_bar_summary"
-        android:defaultValue="true"/>
+    <PreferenceCategory
+        android:key="other_controls_category"
+        android:title="@string/other_controls_title">
 
-    <com.android.settingslib.widget.FooterPreference
-        android:key="gesture_navigation_settings_footer"
-        android:title="@string/back_sensitivity_dialog_message"
-        android:selectable="false"
-        settings:searchable="false"/>
+        <com.blaster.support.preference.SystemSettingSwitchPreference
+            android:key="fullscreen_gestures"
+            android:title="@string/fullscreen_gestures_title"
+            android:summary="@string/fullscreen_gestures_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
 </PreferenceScreen>
 
