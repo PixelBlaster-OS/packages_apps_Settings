@@ -50,7 +50,7 @@
         android:key="top_level_explosives"
         android:title="@string/blaster_settings_title"
         android:summary="@string/blaster_dashboard_summary"
-        android:icon="@drawable/ic_homepage_blaster"
+        android:icon="@drawable/ic_settings_blaster"
         android:order="-130"
         android:fragment="com.blaster.settings.Explosives" />
 
