@@ -39,4 +39,12 @@
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.BlasterMaintainerPreferenceController"/>
 
+    <!-- Support Group -->
+    <Preference
+        android:key="blaster_group"
+        android:title="@string/blaster_group_title"
+        android:summary="@string/blaster_group_summary"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.BlasterGroupPreferenceController"/>
+
 </PreferenceScreen>
