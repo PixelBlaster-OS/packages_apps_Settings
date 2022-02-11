@@ -25,4 +25,18 @@
     android:layout="@layout/blaster_logo_layout"
     android:key="blaster_logo" />
 
+    <!-- Blaster version -->
+    <Preference
+        android:key="rom_version"
+        android:title="@string/blaster_version_title"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.BlasterVersionPreferenceController"/>
+
+    <!-- Blaster maintainer -->
+    <Preference
+        android:key="maintainer"
+        android:title="@string/maintainer"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.BlasterMaintainerPreferenceController"/>
+
 </PreferenceScreen>

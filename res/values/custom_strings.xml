@@ -16,4 +16,5 @@
     <string name="blaster_dashboard_summary">Explode your device</string>
     <string name="blaster_version_title">PixelBlaster Version</string>
     <string name="blaster_version_summary">More info about PixelBlaster</string>
+    <string name="maintainer">Maintainer</string>
 </resources>
