@@ -16,19 +16,32 @@
 package com.android.settings.deviceinfo.firmwareversion;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.SystemProperties;
+import android.text.TextUtils;
+import android.util.Log;
 import androidx.annotation.VisibleForTesting;
+import androidx.preference.Preference;
 
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
 
 public class BlasterMaintainerPreferenceController extends BasePreferenceController {
 
+    private final PackageManager mPackageManager;
+    private static final String TAG = "BlasterMaintainerPrefCtrl";
+    
     @VisibleForTesting
     private static final String MAINTAINER = "ro.pb.maintainer";
+    private static final String URL = "ro.pb.maintainertg";
+    private final Uri INTENT_URI_DATA = Uri.parse(SystemProperties.get(URL,
+                mContext.getString(R.string.device_info_default)));
 
     public BlasterMaintainerPreferenceController(Context context, String preferenceKey) {
         super(context, preferenceKey);
+        mPackageManager = mContext.getPackageManager();
     }
 
     @Override
@@ -40,5 +53,24 @@ public class BlasterMaintainerPreferenceController extends BasePreferenceControl
     public CharSequence getSummary() {
         return SystemProperties.get(MAINTAINER,
                 mContext.getString(R.string.device_info_default));
+    }
+
+    @Override
+    public boolean handlePreferenceTreeClick(Preference preference) {
+        if (!TextUtils.equals(preference.getKey(), getPreferenceKey())) {
+            return false;
+        }
+
+        final Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(INTENT_URI_DATA);
+        if (mPackageManager.queryIntentActivities(intent, 0).isEmpty()) {
+            // Don't send out the intent to stop crash
+            Log.w(TAG, "queryIntentActivities() returns empty");
+            return true;
+        }
+
+        mContext.startActivity(intent);
+        return true;
     }
 }
