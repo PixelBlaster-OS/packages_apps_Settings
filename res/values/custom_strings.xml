@@ -17,4 +17,6 @@
     <string name="blaster_version_title">PixelBlaster Version</string>
     <string name="blaster_version_summary">More info about PixelBlaster</string>
     <string name="maintainer">Maintainer</string>
+    <string name="blaster_group_title">Support Group</string>
+    <string name="blaster_group_summary">https://t.me/PixelBlaster</string>
 </resources>
