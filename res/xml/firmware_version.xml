@@ -21,9 +21,12 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
-<PreferenceScreen
-    android:layout="@layout/blaster_logo_layout"
-    android:key="blaster_logo" />
+    <!-- PixelBlaster version -->
+    <Preference
+        android:key="blaster_version"
+        android:title="@string/blaster_version_title"
+        android:summary="@string/blaster_version_summary"
+        android:fragment="com.android.settings.deviceinfo.firmwareversion.PixelBlasterVersion"/>
 
     <!-- Android version -->
     <Preference
