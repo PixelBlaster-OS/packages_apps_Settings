@@ -17,21 +17,22 @@
 package com.android.settings.blaster.fragments;
 
 import android.os.Bundle;
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 
-public class DisplayCustomizations extends SettingsPreferenceFragment {
+public class CustomizationSettings extends SettingsPreferenceFragment {
 
-    private static final String TAG = "Display Customizations";
+    private static final String TAG = "Customizations";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.display_customizations);
+        addPreferencesFromResource(R.xml.customization_settings);
     }
 
     @Override
     public int getMetricsCategory() {
-        return -1;
+        return MetricsProto.MetricsEvent.CUSTOM;
     }
 }

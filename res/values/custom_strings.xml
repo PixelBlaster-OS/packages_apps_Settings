@@ -72,6 +72,8 @@
     <string name="customization_category_title">Customization</string>
     <string name="display_customization_title">Display Customizations</string>
     <string name="statusbar_category_title">Statusbar Customizations</string>
+    <string name="customization_settings_title">Customizations</string>
+    <string name="customization_settings_summary">Customize your device</string>
 
     <!-- Double Tap to Sleep Lockscreen -->
     <string name="double_tap_sleep_lockscreen_title">Double tap to sleep</string>
