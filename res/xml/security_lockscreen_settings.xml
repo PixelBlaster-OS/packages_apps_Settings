@@ -124,6 +124,13 @@
     <PreferenceCategory
         android:key="lockscreen_fingerprint_category"
         android:title="@string/fingerprint_category">
+
+        <com.blaster.support.preference.SystemSettingSwitchPreference
+            android:key="fingerprint_start_vib"
+            android:title="@string/fprint_start_vib_title"
+            android:summary="@string/fprint_start_vib_summary"
+            android:persistent="true" />
+
         <com.blaster.support.preference.SystemSettingSwitchPreference
             android:key="fingerprint_success_vib"
             android:title="@string/fprint_sucess_vib_title"

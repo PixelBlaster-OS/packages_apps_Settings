@@ -199,6 +199,8 @@
 
     <!-- Fingerprint authentication vibration -->
     <string name="fingerprint_category">Fingerprint</string>    
+    <string name="fprint_start_vib_title">UDFPS Touch vibration</string>
+    <string name="fprint_start_vib_summary">Vibrate on touching the UDFPS sensor</string>  
     <string name="fprint_sucess_vib_title">Fingerprint success vibration</string>
     <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
     <string name="fprint_error_vib_title">Fingerprint error vibration</string>
