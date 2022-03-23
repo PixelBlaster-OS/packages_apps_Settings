@@ -121,6 +121,22 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="lockscreen_fingerprint_category"
+        android:title="@string/fingerprint_category">
+        <com.blaster.support.preference.SystemSettingSwitchPreference
+            android:key="fingerprint_success_vib"
+            android:title="@string/fprint_sucess_vib_title"
+            android:summary="@string/fprint_sucess_vib_summary"
+            android:persistent="true" />
+
+        <SwitchPreference
+            android:key="fingerprint_error_vib"
+            android:title="@string/fprint_error_vib_title"
+            android:summary="@string/fprint_error_vib_summary"
+            android:persistent="true" />
+    </PreferenceCategory>
+
     <!-- Work profile settings are at the bottom with high order value to avoid users thinking that
          any of the above settings (including dynamic) are specific to the work profile. -->
     <PreferenceCategory
