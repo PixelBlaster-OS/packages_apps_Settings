@@ -61,6 +61,14 @@
             android:summaryOff="@string/location_privacy_indicator_summary_off"
             android:defaultValue="true" />
 
+        <!-- Network Traffic -->
+        <com.blaster.support.preference.SystemSettingMasterSwitchPreference
+            android:key="network_traffic_state"
+            android:title="@string/network_traffic_state_title"
+            android:summary="@string/network_traffic_state_summary"
+            android:fragment="com.android.settings.blaster.fragments.NetworkTraffic"
+            android:defaultValue="false" />
+
         <Preference
             android:key="systemui_tuner_statusbar"
             android:title="@string/statusbar_items_title" >
@@ -119,13 +127,7 @@
             android:summary="@string/quick_settings_vibrate_summary"
             android:defaultValue="true"/>
 
-        <!-- Network Traffic -->
-        <com.blaster.support.preference.SystemSettingMasterSwitchPreference
-            android:key="network_traffic_state"
-            android:title="@string/network_traffic_state_title"
-            android:summary="@string/network_traffic_state_summary"
-            android:fragment="com.android.settings.blaster.fragments.NetworkTraffic"
-            android:defaultValue="false" />
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="ambientsettings_category"
