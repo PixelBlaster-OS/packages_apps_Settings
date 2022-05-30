@@ -74,7 +74,13 @@
             android:title="@string/lockscreen_double_line_clock_setting_toggle"
             android:summary="@string/lockscreen_double_line_clock_summary"
             settings:controller="com.android.settings.display.LockscreenClockPreferenceController" />
-    
+
+        <com.blaster.support.preference.SystemSettingSwitchPreference
+            android:key="aod_clock_accent"
+            android:title="@string/aod_clock_accent_title"
+            android:summary="@string/aod_clock_accent_summary"
+            android:defaultValue="true" />
+
         <com.blaster.support.preference.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
             android:title="@string/lockscreen_battery_info_title"

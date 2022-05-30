@@ -525,4 +525,8 @@
     <string name="battery_light_medium_color">Medium battery</string>
     <string name="battery_light_full_color">Almost full battery</string>
     <string name="battery_light_reallyfull_color">Full (100) battery</string>
+
+     <!-- AOD clock accent color -->
+     <string name="aod_clock_accent_title">Apply accent color to AOD clock</string>
+     <string name="aod_clock_accent_summary">Apply accent color to AOD clock (Requires SystemUI restart)</string>
 </resources>
