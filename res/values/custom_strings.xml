@@ -243,4 +243,5 @@
     <!-- Misc Haptics -->
     <string name="misc_vibration_category_title"> Misc Haptics</string>
     <string name="qs_brightness_haptic_feedback_title">Vibrate on adjusting brightness</string>
+    <string name="volume_panel_haptic_feedback_title">Vibrate on changing volume</string>
 </resources>
