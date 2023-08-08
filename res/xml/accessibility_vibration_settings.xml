@@ -112,6 +112,12 @@
             android:dependency="touch_vibration_preference_screen"
             android:defaultValue="false" />
 
+        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="volume_panel_haptic_feedback"
+            android:title="@string/volume_panel_haptic_feedback_title"
+            android:dependency="touch_vibration_preference_screen"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
