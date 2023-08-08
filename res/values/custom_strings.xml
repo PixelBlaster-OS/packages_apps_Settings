@@ -269,4 +269,8 @@
     <string name="qs_show_battery_estimate_title">Battery estimates</string>
     <string name="qs_show_battery_estimate_summary_on">Show battery estimates in QS</string>
     <string name="qs_show_battery_estimate_summary_off">Hide battery estimates in QS</string>
+
+    <!-- Misc Haptics -->
+    <string name="misc_vibration_category_title"> Misc Haptics</string>
+    <string name="qs_brightness_haptic_feedback_title">Vibrate on adjusting brightness</string>
 </resources>
