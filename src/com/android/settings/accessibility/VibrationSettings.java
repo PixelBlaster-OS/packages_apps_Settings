@@ -18,9 +18,14 @@ package com.android.settings.accessibility;
 
 import android.app.settings.SettingsEnums;
 import android.content.Context;
+import android.os.Bundle;
 import android.os.Vibrator;
 import android.provider.SearchIndexableResource;
 
+import androidx.preference.Preference;
+
+import com.android.internal.util.custom.CustomUtils;
+import com.android.settings.custom.preference.SystemSettingSwitchPreference;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -31,9 +36,16 @@ import java.util.List;
 
 /** Accessibility settings for the vibration. */
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class VibrationSettings extends DashboardFragment {
+public class VibrationSettings extends DashboardFragment
+        implements Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "VibrationSettings";
+
+    private static final String SCROLL_FLING_HAPTIC_FEEDBACK = "scroll_fling_haptic_feedback";
+
+    private static final String LAUNCHER_PACKAGE_NAME = "com.android.launcher3";
+
+    private SystemSettingSwitchPreference mScrollFlingHapticFeedback;
 
     private static int getVibrationXmlResourceId(Context context) {
         final int supportedIntensities = context.getResources().getInteger(
@@ -42,6 +54,22 @@ public class VibrationSettings extends DashboardFragment {
                 ? R.xml.accessibility_vibration_intensity_settings
                 : R.xml.accessibility_vibration_settings;
 
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mScrollFlingHapticFeedback = (SystemSettingSwitchPreference) findPreference(SCROLL_FLING_HAPTIC_FEEDBACK);
+        mScrollFlingHapticFeedback.setOnPreferenceChangeListener(this);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mScrollFlingHapticFeedback) {
+            CustomUtils.restartApp(LAUNCHER_PACKAGE_NAME, getActivity());
+            return true;
+        }
+        return false;
     }
 
     @Override
